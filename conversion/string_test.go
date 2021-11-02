@@ -91,3 +91,37 @@ func TestBoolToString(t *testing.T) {
 		assert.Equal(t, res, "false", "value is not equals")
 	}
 }
+
+func TestEscapeString(t *testing.T) {
+
+	t.Log(`Convert escape string "Fran & Freddie's Diner" <tasty@example.com>"`)
+	{
+		text := `"Fran & Freddie's Diner" <tasty@example.com>"`
+		res := EscapeString(text)
+		assert.Equal(t, res, "&#34;Fran &amp; Freddie&#39;s Diner&#34; &lt;tasty@example.com&gt;&#34;", "value is not equals")
+	}
+
+	t.Log(`Convert escape string "your_name@gmail.com && my_name@gmail.com"`)
+	{
+		text := "your_name@gmail.com && my_name@gmail.com"
+		res := EscapeString(text)
+		assert.Equal(t, res, "your_name@gmail.com &amp;&amp; my_name@gmail.com", "value is not equals")
+	}
+}
+
+func TestUnescapeString(t *testing.T) {
+
+	t.Log(`Convert escape string "Fran & Freddie's Diner" <tasty@example.com>"`)
+	{
+		text := `&#34;Fran &amp; Freddie&#39;s Diner&#34; &lt;tasty@example.com&gt;&#34;`
+		res := UnescapeString(text)
+		assert.Equal(t, res, `"Fran & Freddie's Diner" <tasty@example.com>"`, "value is not equals")
+	}
+
+	t.Log(`Convert escape string "your_name@gmail.com && my_name@gmail.com"`)
+	{
+		text := "your_name@gmail.com &amp;&amp; my_name@gmail.com"
+		res := UnescapeString(text)
+		assert.Equal(t, res, "your_name@gmail.com && my_name@gmail.com", "value is not equals")
+	}
+}

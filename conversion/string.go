@@ -2,6 +2,7 @@ package conversion
 
 import (
 	"fmt"
+	"html"
 	"strconv"
 )
 
@@ -43,4 +44,14 @@ func Float64ToString(num float64) string {
 // BoolToString ...
 func BoolToString(num bool) string {
 	return fmt.Sprintf(`%t`, num)
+}
+
+// EscapeString ...
+func EscapeString(text string) string {
+	return html.EscapeString(text)
+}
+
+// UnescapeString ...
+func UnescapeString(text string) string {
+	return html.UnescapeString(text)
 }

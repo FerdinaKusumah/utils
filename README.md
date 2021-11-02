@@ -13,6 +13,8 @@ Common utils that need in every development
     * `Float32ToString(num float32) string`
     * `Float64ToString(num float64) string`
     * `BoolToString(num bool) string`
+    * `EscapeString(text string) string`
+    * `UnescapeString(text string) string`
   * Numeric
     * `StringToInt(num string) int`
     * `StringToInt8(num string) int8`
@@ -22,6 +24,23 @@ Common utils that need in every development
     * `StringToFloat32(num string) float32`
     * `StringToFloat64(num string) float64`
     * `StringToBool(num string) bool`
+
+* Hash
+  * Base64
+    * `Base64Encode(text string) string`
+    * `Base64Decode(text string) string`
+  * Sha1
+    * `Sha1HashString(text string) string`
+
+* Url
+  * `EscapeStringFromUrl(text string) string`
+  * `UnescapeStringFromUrl(text string) string`
+  * `IsUrlValid(text string) bool`
+  * `GetHostFromUrl(text string) string`
+  * `GetSchemeFromUrl(text string) string`
+  * `GetPathFromUrl(text string) string`
+  * `GetRawPathFromUrl(text string) string`
+  * `GetRawQueryFromUrl(text string) string`
 
 
 ## Help & Bugs
