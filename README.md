@@ -1,9 +1,10 @@
 # Utils modules
 
-Common utils that need in every development
+Common utils that need in every development,
+it provides a built-in golang function which needs to be wrapped in utils.
 
 ## Modules
-* Conversion
+* conversion
   * String
     * `IntToString(num int) string`
     * `Int8ToString(num int8) string`
@@ -25,14 +26,14 @@ Common utils that need in every development
     * `StringToFloat64(num string) float64`
     * `StringToBool(num string) bool`
 
-* Hash
+* hash
   * Base64
     * `Base64Encode(text string) string`
     * `Base64Decode(text string) string`
   * Sha1
     * `Sha1HashString(text string) string`
 
-* Url
+* url
   * `EscapeStringFromUrl(text string) string`
   * `UnescapeStringFromUrl(text string) string`
   * `IsUrlValid(text string) bool`
@@ -41,6 +42,35 @@ Common utils that need in every development
   * `GetPathFromUrl(text string) string`
   * `GetRawPathFromUrl(text string) string`
   * `GetRawQueryFromUrl(text string) string`
+
+
+
+## Install module
+
+```shell
+  go get github.com/FerdinaKusumah/utils
+```
+
+
+## Example
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/FerdinaKusumah/utils/conversion"
+	"github.com/FerdinaKusumah/utils/hash"
+)
+
+func main(){
+
+	x := conversion.StringToInt("1230")
+	fmt.Println(x)
+
+	y := hash.Base64Encode("hello world")
+	fmt.Println(y)
+}
+```
 
 
 ## Help & Bugs
