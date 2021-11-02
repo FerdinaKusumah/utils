@@ -43,6 +43,28 @@ it provides a built-in golang function which needs to be wrapped in utils.
   * `GetRawPathFromUrl(text string) string`
   * `GetRawQueryFromUrl(text string) string`
 
+* date
+  * date
+    * `GetCurrentDateString() string`
+    * `GetCurrentDatetime() time.Time`
+    * `GetCurrentUTCDatetime() time.Time`
+    * `GetCurrentUTCDateString() string`
+    * `GetCurrentMonthNumber() int`
+    * `GetCurrentMonthString() string`
+    * `GetCurrentDay() int`
+    * `GetFirstDateOfMonth(t time.Time) time.Time`
+    * `GetFirstDateCurrentMonth() time.Time`
+    * `GetLastDateOfMonth(t time.Time) time.Time`
+    * `GetLastDateCurrentMonth() time.Time`
+    * `GetFirstDateOfYear(t time.Time) time.Time`
+    * `GetFirstDateCurrentYear() time.Time`
+    * `GetLastDateOfYear(t time.Time) time.Time`
+    * `GetLastDateCurrentYear() time.Time`
+  * conversion
+    * `StringToDate(text string) time.Time`
+    * `StringToUTCDate(text string) time.Time`
+  * validation
+    * `IsDateIsValid(text string) bool`
 
 
 ## Install module
@@ -65,10 +87,10 @@ import (
 func main(){
 
 	x := conversion.StringToInt("1230")
-	fmt.Println(x)
+	fmt.Println(x) // 1230
 
 	y := hash.Base64Encode("hello world")
-	fmt.Println(y)
+	fmt.Println(y) // aGVsbG8gd29ybGQ=
 }
 ```
 
